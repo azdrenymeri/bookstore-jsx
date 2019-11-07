@@ -1,13 +1,11 @@
-import { React } from "react";
+import React from "react";
 
-function Book(props) {
-  return (
-    <div>
-      <p>
-          {props.title} - {props.category}
-      </p>
-    </div>
-  )
+
+export default function Book(props) {
+    return (
+        <div>
+            <p>{props.book.title} - {props.book.category}</p>
+        </div>
+    );
 }
 
-export default Book;
