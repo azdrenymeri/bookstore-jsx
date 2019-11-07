@@ -1,5 +1,5 @@
 import React from "react";
-
+import {PropTypes} from 'prop-types';
 
 export default function Book(props) {
     return (
@@ -9,3 +9,6 @@ export default function Book(props) {
     );
 }
 
+Book.propTypes = {
+    book: PropTypes.object.isRequired
+}
