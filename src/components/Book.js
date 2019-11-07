@@ -3,7 +3,9 @@ import { React } from "react";
 function Book(props) {
   return (
     <div>
-      <p></p>
+      <p>
+          {props.title} - {props.category}
+      </p>
     </div>
   )
 }
