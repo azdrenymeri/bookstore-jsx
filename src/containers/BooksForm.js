@@ -10,7 +10,7 @@ class BooksForm extends React.Component {
         super(props);
         this.state = {
             title: '',
-            category: ''
+            category: categories[0]
         }
         this.handleChange = this.handleChange.bind(this);
         this.handleSubmit = this.handleSubmit.bind(this);
