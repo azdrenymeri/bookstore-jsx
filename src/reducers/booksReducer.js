@@ -1,9 +1,11 @@
 import { CREATE_BOOK, REMOVE_BOOK } from '../actions/index';
 
 const booksReducer = (state=[],action) => {
+    console.log(action.type);
+    
     switch(action.type) {
         case CREATE_BOOK:
-            return [...state.push(action.payload)]
+            return [...state,action.payload]
         case REMOVE_BOOK:
         return [
             ...state.filter((book) => {

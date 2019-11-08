@@ -1,8 +1,8 @@
 import React from 'react';
 import './App.css';
-import { BooksForm } from './components/BooksForm';
+import  BooksForm from './containers/BooksForm';
 import { connect } from 'react-redux';
-import BookList from './components/BookList';
+import BookList from './containers/BookList';
 
 // eslint-disable-next-line linebreak-style
 function App() {
