@@ -49,11 +49,10 @@ class BooksForm extends React.Component {
         });
 
         return (
-            <div>
+            <div className="formContainer">
                 <form onSubmit={this.handleSubmit}>
                     <p>
-                    &nbsp;&nbsp;&nbsp;
-                        <input className="input" type="text" name="title" value={this.state.title} placeholder="Book title" onChange={this.handleChange} />
+                        <input className="bookTitle" type="text" name="title" value={this.state.title} placeholder="Book title" onChange={this.handleChange} />
                         &nbsp;&nbsp;&nbsp;
                         <select className="filter" name="category" value={this.state.category} onChange={this.handleChange}>
                             {bookCategories}

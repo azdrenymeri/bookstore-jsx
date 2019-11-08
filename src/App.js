@@ -14,6 +14,7 @@ function App() {
           <span className="Categories"> Categories</span>
       </div>
       <BookList />
+      <h2 className="title">ADD NEW BOOK</h2>
       <BooksForm />
     </div>
   );

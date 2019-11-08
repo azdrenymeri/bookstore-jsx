@@ -8,7 +8,7 @@ export function CategoryFilter(props) {
     });
 
     return (
-        <div>
+        <div className="filterContainer">
             <label> Filter books:&nbsp;&nbsp;
                 <select className="filter" name="filter" onChange={props.handleChange}>
                             {bookCategories}
