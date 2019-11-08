@@ -35,7 +35,7 @@ BookList.propTypes = {
 const mapStateToProps = state => {
     return {
         filter: state.filter,
-        books: state.filter != 'All'? 
+        books: state.filter !== 'All'? 
         state.books.filter(book => book.category === state.filter) : state.books
     }
 };
