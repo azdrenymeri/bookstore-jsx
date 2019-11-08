@@ -2,9 +2,10 @@ import React from "react";
 import {PropTypes} from 'prop-types';
 
 export default function Book(props) {
+    const {title,category} = props;
     return (
         <div>
-            <p>{props.book.title} - {props.book.category}<button onClick={() => props.handleRemove(props.book)}>Remove Book</button></p>
+            <p>{title} - {category}</p>
         </div>
     );
 }
@@ -12,4 +13,7 @@ export default function Book(props) {
 Book.propTypes = {
     book: PropTypes.object.isRequired,
     handleRemove: PropTypes.func.isRequired
+    title: PropTypes.string.isRequired,
+    category: PropTypes.string.isRequired
+
 }
