@@ -27,7 +27,7 @@ class BooksForm extends React.Component {
         event.preventDefault();
         const{title, category} = this.state;
 
-        if(title.length !== 0 && category.length !== 0 && category !== 'Select') {
+        if(title.length !== 0 && category.length !== 0 && category !== 'All') {
             this.props.createBook({
                 id: Math.random(),
                 title,

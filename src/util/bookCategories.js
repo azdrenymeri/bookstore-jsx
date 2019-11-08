@@ -1,1 +1,1 @@
-export const categories = ['Select','Action','Biography','History','Horror','Kids','Learning','Sci-Fi'];
+export const categories = ['All','Action','Biography','History','Horror','Kids','Learning','Sci-Fi'];

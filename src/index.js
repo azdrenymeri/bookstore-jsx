@@ -30,7 +30,8 @@ const initialState = {
             title: 'WWII',
             category: 'History'
         }
-    ]
+    ],
+    filter: 'All'
 };
 
 const store = createStore(combinedReducers,
