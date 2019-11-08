@@ -8,11 +8,7 @@ import { CategoryFilter } from './CategoryFilter';
 function BookList(props) {
 
     const booksList = () => {
-        if (props.filter === 'All'){
-            return props.books;
-        } else {
-            return props.books.filter(book => book.category === props.filter);
-        }
+      return  props.filter !== 'All'? props.books.filter(book => book.category === props.filter): props.books;
     }
 
     return (

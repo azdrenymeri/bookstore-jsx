@@ -36,7 +36,6 @@ class BooksForm extends React.Component {
         } else {
             alert('Please fill the book title and select a proper category');
         }
-
         this.setState({
             title: '',
             category: categories[0]
