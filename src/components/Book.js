@@ -2,13 +2,15 @@ import React from "react";
 import {PropTypes} from 'prop-types';
 
 export default function Book(props) {
+    const {title,category} = props;
     return (
         <div>
-            <p>{props.book.title} - {props.book.category}</p>
+            <p>{title} - {category}</p>
         </div>
     );
 }
 
 Book.propTypes = {
-    book: PropTypes.object.isRequired
+    title: PropTypes.string.isRequired,
+    category: PropTypes.string.isRequired
 }
