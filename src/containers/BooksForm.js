@@ -11,6 +11,7 @@ class BooksForm extends React.Component {
         this.state = {
             title: '',
             category: categories[0]
+
         }
         this.handleChange = this.handleChange.bind(this);
         this.handleSubmit = this.handleSubmit.bind(this);
@@ -27,7 +28,8 @@ class BooksForm extends React.Component {
         event.preventDefault();
         const{title, category} = this.state;
 
-        if(title.length !== 0 && category.length !== 0 && category !== 'Select') {
+
+        if(title.length !== 0 && category.length !== 0 && category !== 'All') {
             this.props.createBook({
                 id: Math.random(),
                 title,
