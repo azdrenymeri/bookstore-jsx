@@ -11,6 +11,9 @@ export default function Book(props) {
 }
 
 Book.propTypes = {
+    book: PropTypes.object.isRequired,
+    handleRemove: PropTypes.func.isRequired
     title: PropTypes.string.isRequired,
     category: PropTypes.string.isRequired
+
 }
