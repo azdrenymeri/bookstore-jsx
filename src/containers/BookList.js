@@ -13,7 +13,8 @@ function BookList(props) {
             <br/>
                 <CategoryFilter handleChange={ (e) => props.changeFilter(e.target.value)} />
             {props.books.map(book => {
-                return <Book key={book.id} book={book}  handleRemove={props.removeBook}/>  
+                return <Book key={book.id} book={book}  handleRemove={props.removeBook}/> 
+
             })}
         </div>
     )
@@ -27,9 +28,11 @@ BookList.propTypes = {
             category: PropTypes.string
         }).isRequired
     ).isRequired,
+
     removeBook: PropTypes.func.isRequired,
     changeFilter: PropTypes.func.isRequired,
     filter: PropTypes.string.isRequired
+    removeBook: PropTypes.func.isRequired
 };
 
 const mapStateToProps = state => {
