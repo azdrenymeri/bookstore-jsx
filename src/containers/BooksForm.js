@@ -10,8 +10,7 @@ class BooksForm extends React.Component {
         super(props);
         this.state = {
             title: '',
-            category: categories[0]
-
+            category: 'Select'
         }
         this.handleChange = this.handleChange.bind(this);
         this.handleSubmit = this.handleSubmit.bind(this);
@@ -28,8 +27,7 @@ class BooksForm extends React.Component {
         event.preventDefault();
         const{title, category} = this.state;
 
-
-        if(title.length !== 0 && category.length !== 0 && category !== 'All') {
+        if(title.length !== 0 && category.length !== 0 && category !== 'Select') {
             this.props.createBook({
                 id: Math.random(),
                 title,
@@ -41,31 +39,29 @@ class BooksForm extends React.Component {
 
         this.setState({
             title: '',
-            category: categories[0]
+            category: 'Select'
         });
     }
 
     render(){
         const bookCategories = categories.map(category => {
+            if(category === 'All'){category = 'Select'}
             return <option key={category} value={category}> {category} </option>
         });
 
         return (
-            <div>
+            <div className="formContainer">
                 <form onSubmit={this.handleSubmit}>
                     <p>
-                        <label>Book Title:&nbsp;&nbsp;</label>
-                        <input type="text" name="title" value={this.state.title} placeholder="Book title" onChange={this.handleChange} />
-                    </p>
-                    <p>
-                        <label> Pick a category:&nbsp;&nbsp;
-                        <select name="category" value={this.state.category} onChange={this.handleChange}>
+                        <input className="bookTitle" type="text" name="title" value={this.state.title} placeholder="Book title" onChange={this.handleChange} />
+                        &nbsp;&nbsp;&nbsp;
+                        <select className="filter" name="category" value={this.state.category} onChange={this.handleChange}>
                             {bookCategories}
                         </select>
-                        </label>
-    
+                        &nbsp;&nbsp;&nbsp;
+                        <button className="btn" type="submit">ADD BOOK</button>
                     </p>
-                <button type="submit"> Submit Book</button>
+                
                 </form>
             </div>
         );
