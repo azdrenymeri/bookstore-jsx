@@ -7,21 +7,14 @@ import { CategoryFilter } from './CategoryFilter';
 
 function BookList(props) {
 
-    const booksList = () => {
-        if (props.filter === 'All'){
-            return props.books;
-        } else {
-            return props.books.filter(book => book.category === props.filter);
-        }
-    }
-
     return (
         <div>
             <br/>
             <br/>
                 <CategoryFilter handleChange={ (e) => props.changeFilter(e.target.value)} />
-            {booksList().map(book => {
-                return <Book key={book.id} book={book}  handleRemove={props.removeBook}/>  
+            {props.books.map(book => {
+                return <Book key={book.id} book={book}  handleRemove={props.removeBook}/> 
+
             })}
         </div>
     )
@@ -35,15 +28,18 @@ BookList.propTypes = {
             category: PropTypes.string
         }).isRequired
     ).isRequired,
+
     removeBook: PropTypes.func.isRequired,
     changeFilter: PropTypes.func.isRequired,
     filter: PropTypes.string.isRequired
+    removeBook: PropTypes.func.isRequired
 };
 
 const mapStateToProps = state => {
     return {
-        books: state.books,
-        filter: state.filter
+        filter: state.filter,
+        books: state.filter !== 'All'? 
+        state.books.filter(book => book.category === state.filter) : state.books
     }
 };
 

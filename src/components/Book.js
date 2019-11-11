@@ -2,6 +2,7 @@ import React from "react";
 import {PropTypes} from 'prop-types';
 
 export default function Book(props) {
+    const {title,category} = props.book;
     return (
         <div className="container">
             {/* first section */}
@@ -40,5 +41,8 @@ export default function Book(props) {
 
 Book.propTypes = {
     book: PropTypes.object.isRequired,
-    handleRemove: PropTypes.func.isRequired
+    handleRemove: PropTypes.func.isRequired,
+    title: PropTypes.string.isRequired,
+    category: PropTypes.string.isRequired
+
 }
